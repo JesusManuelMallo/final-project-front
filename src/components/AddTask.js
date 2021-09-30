@@ -4,7 +4,7 @@ import axios from "axios";
 const API_URL = process.env.REACT_APP_API_URL;
 
 
-function AddTask(props) {
+function AddSong(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -23,7 +23,7 @@ function AddTask(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .post(
-        `${API_URL}/tasks`,
+        `${API_URL}/songs`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }        
       )
@@ -41,7 +41,7 @@ function AddTask(props) {
 
   
   return (
-    <div className="AddTask">
+    <div className="AddSong">
       <h3>Add New Task</h3>
       
       <form onSubmit={handleSubmit}>
@@ -67,4 +67,4 @@ function AddTask(props) {
   );
 }
 
-export default AddTask;
+export default AddSong;

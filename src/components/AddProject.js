@@ -3,7 +3,7 @@ import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-function AddProject(props) {
+function AddSong(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
@@ -18,15 +18,15 @@ function AddProject(props) {
     // Send the token through the request "Authorization" Headers
     axios
       .post(
-        `${API_URL}/projects`,
+        `${API_URL}/songs`, // cambiada esta ruta de projects a songs
         requestBody,
-        { headers: { Authorization: `Bearer ${storedToken}` } }  ///PONER
+        { headers: { Authorization: `Bearer ${storedToken}` } }  
       )
       .then((response) => {
         // Reset the state
         setTitle("");
         setDescription("");
-        props.refreshProjects();
+        props.refreshSongs();
       })
       .catch((error) => console.log(error));
   };
@@ -59,4 +59,4 @@ function AddProject(props) {
   );
 }
 
-export default AddProject;
+export default AddSong;

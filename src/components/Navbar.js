@@ -15,8 +15,8 @@ function Navbar() {
 -
       {isLoggedIn
         ? (<>
-            <Link to="/projects">
-              <button>Projects</button>
+            <Link to="/songs">
+              <button>Songs</button>
             </Link>
             <button onClick={logOutUser}>Logout</button>
             <span>{user.name}</span>

@@ -8,58 +8,58 @@ import TaskCard from "../components/TaskCard";
 const API_URL = process.env.REACT_APP_API_URL;
 
 
-function ProjectDetailsPage (props) {
-  const [project, setProject] = useState(null);
-  const projectId = props.match.params.id;
+function SongDetailsPage (props) {
+  const [song, setSong] = useState(null);
+  const songtId = props.match.params.id;
   
   
-  const getProject = () => {
+  const getSong = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');
 
     // Send the token through the request "Authorization" Headers
     axios
       .get(
-        `${API_URL}/projects/${projectId}`,
+        `${API_URL}/songs/${projectId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }
       )
       .then((response) => {
         const oneProject = response.data;
-        setProject(oneProject);
+        setSong(oneSong);
       })
       .catch((error) => console.log(error));
   };
   
   
   useEffect(()=> {
-    getProject();
+    getSong();
   }, [] );
 
   
   return (
-    <div className="ProjectDetails">
-      {project && (
+    <div className="SongtDetails">
+      {song && (
         <>
-          <h1>{project.title}</h1>
-          <p>{project.description}</p>
+          <h1>{song.title}</h1>
+          <p>{song.description}</p>
         </>
       )}
 
       
-      <AddTask refreshProject={getProject} projectId={projectId} />          
+      <AddTask refreshSong={getSong} songId={songId} />          
 
-      { project && project.tasks.map((task) => <TaskCard key={task._id} {...task} /> )} 
+      { song && song.tasks.map((task) => <TaskCard key={task._id} {...task} /> )} 
 
-      <Link to="/projects">
-        <button>Back to projects</button>
+      <Link to="/songs">
+        <button>Back to songs</button>
       </Link>
           
-      <Link to={`/projects/edit/${projectId}`}>
-        <button>Edit Project</button>
+      <Link to={`/songs/edit/${projectId}`}>
+        <button>Edit Song</button>
       </Link>
       
     </div>
   );
 }
 
-export default ProjectDetailsPage;
+export default SongDetailsPage;

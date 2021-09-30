@@ -3,10 +3,10 @@ import axios from "axios";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-function EditProjectPage(props) {
+function EditSongPage(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const projectId = props.match.params.id;
+  const songId = props.match.params.id;
   
   
   useEffect(() => {
@@ -16,7 +16,7 @@ function EditProjectPage(props) {
     // Send the token through the request "Authorization" Headers 
     axios
       .get(
-        `${API_URL}/projects/${projectId}`,
+        `${API_URL}/songs/${songId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }    
       )
       .then((response) => {
@@ -26,7 +26,7 @@ function EditProjectPage(props) {
       })
       .catch((error) => console.log(error));
     
-  }, [projectId]);
+  }, [songId]);
   
 
   const handleFormSubmit = (e) => {
@@ -39,33 +39,33 @@ function EditProjectPage(props) {
     // Send the token through the request "Authorization" Headers   
     axios
       .put(
-        `${API_URL}/projects/${projectId}`,
+        `${API_URL}/songs/${songId}`,
         requestBody,
         { headers: { Authorization: `Bearer ${storedToken}` } }              
       )
       .then((response) => {
-        props.history.push(`/projects/${projectId}`)
+        props.history.push(`/songs/${songId}`)
       });
   };
   
   
-  const deleteProject = () => {
+  const deleteSong = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem('authToken');      
     
     // Send the token through the request "Authorization" Headers   
     axios
       .delete(
-        `${API_URL}/projects/${projectId}`,
+        `${API_URL}/songs/${songId}`,
         { headers: { Authorization: `Bearer ${storedToken}` } }           
       )
-      .then(() => props.history.push("/projects"))
+      .then(() => props.history.push("/songs"))
       .catch((err) => console.log(err));
   };  
 
   
   return (
-    <div className="EditProjectPage">
+    <div className="EditSongPage">
       <h3>Edit the Project</h3>
 
       <form onSubmit={handleFormSubmit}>
@@ -84,12 +84,12 @@ function EditProjectPage(props) {
           onChange={(e) => setDescription(e.target.value)}
         />
 
-        <button type="submit">Update Project</button>
+        <button type="submit">Update Song</button>
       </form>
 
-      <button onClick={deleteProject}>Delete Project</button>
+      <button onClick={deleteSong}>Delete Song</button>
     </div>
   );
 }
 
-export default EditProjectPage;
+export default EditSongPage;
