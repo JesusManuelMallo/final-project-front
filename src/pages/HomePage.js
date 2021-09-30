@@ -1,6 +1,6 @@
 import axios from 'axios'
-import React, {useState, useEffect, useContext} from 'react'
-// import { AuthContext } from "./../context/auth.context"; /!!!/
+import React, {useState, useEffect, } from 'react'
+import { AuthContext } from "./../context/auth.context"; 
 
 
 
@@ -12,6 +12,7 @@ function HomePage() {
   const handleLoggedIn =(e)=> setIsLoggedIn()
 
  */
+  const [songs, setSongs] = useState([])
 
   useEffect(() => {
     // Get the token from the localStorage
@@ -20,11 +21,11 @@ function HomePage() {
     // Send the token through the request "Authorization" Headers 
     axios
       .get(
-        `https://openwhyd.org/adrien?format=json`,
+        `https://openwhyd.org/u/61561e4608ced3543d922165?format=json`,
       
       )
       .then((response) => {
-        const oneSong = response.data; 
+        setSongs(response.data) 
      
       })
       .catch((error) => console.log(error));
@@ -40,34 +41,22 @@ function HomePage() {
       <h2>Welcome 2 the dawn, U just accessed to <b><i> The Beautiful Experience</i> </b></h2>
       <p> <b><i> The Beautiful Experience</i> </b> will progress over time</p>
       <p>By now, you´ll have acces to a list from 20 songs to be stored on your profile</p>
-    {/* 
-
-    {isLoggedIn ? 
-
-  useEffect(() => {
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');
     
-    // Send the token through the request "Authorization" Headers 
-    axios
-      .get(
-        `https://openwhyd.org/adrien?format=json`,
-      
-      )
-      .then((response) => {
-        const oneSong = response.data;
-      
-                           })
-      .catch((error) => console.log(error));
+      {songs.map((i) => (
+        <div key={i.text} className="card">
+          <img src={i.name} alt="TBEsong" />
+          <h3>{i.name}</h3>
+          
+        </div>
+      ))}
     
-        }, []) :
-        null
-
-    } */}
+    
+  
     </div>
   );
 }
 
 export default HomePage;
 
-//https://openwhyd.org/adrien?format=json
+
+//https://openwhyd.org/u/61561e4608ced3543d922165?format=json
