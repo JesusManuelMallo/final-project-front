@@ -34,7 +34,7 @@ function AddSong(props) {
 
   return (
     <div className="AddProject">
-      <h3>Add Project</h3>
+      <h3>Add Song</h3>
 
       <form onSubmit={handleSubmit}>
         <label>Title:</label>
