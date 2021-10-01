@@ -1,104 +1,48 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import AddTask from "../components/AddTask"
+import AddSong from "../components/AddSong";
 import SongCard from "./../components/SongCard";
-
+import { AuthContext } from "./../context/auth.context";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
-
 function SongListPage() {
   const [songs, setSongs] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [songs2, setSongs2] = useState([]);
+  const storedToken = localStorage.getItem("authToken");
+  const { isLoggedIn, user } = useContext(AuthContext);
 
-  const getAllSongs = () => {
-    const storedToken = localStorage.getItem('authToken');
-
-    // Send the token through the request "Authorization" Headers
+  const allFavourites = () => {
+    const config = {
+      headers: { Authorization: `Bearer ${storedToken}` },
+    };
+    const body = { user };
     axios
-      .get(
-      `${API_URL}/songs`,
-      { headers: { Authorization: `Bearer ${storedToken}` } }
-    )
+      .post(`${API_URL}/getfavourites`, body, config)
       .then((response) => {
-        setSongs(response.data)
-        setLoading(false)
+        console.log("fdasfd", response);
+        setSongs2(response.data);
+        setLoading(false);
       })
-      .catch((error) => console.log(error));
-    }
-  // We set this effect will run only once, after the initial render
-  // by setting the empty dependency array - []
-  useEffect(() => {
-    getAllSongs();
-  }, [] );
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
-  
+  useEffect(() => {
+    allFavourites();
+  }, []);
+
   return (
     <div className="SongsListPage">
-      
-      <AddTask refreshSongs={getAllSongs} />
+      <h1>SOY LA PAGINA Q WARDA CACNNNCIONES</h1>
+      <AddSong refreshSongs={allFavourites} />
 
-      {loading && <div>Loading...</div>}
-      { !loading && songs?.map((song) => <SongCard key={song._id} {...song} />  )} 
-       
+      {loading ? <div>Loading...</div> : null}
+      {!loading && songs2?.map((song) => <SongCard key={song._id} {...song} />)}
     </div>
   );
 }
 
 export default SongListPage;
-
-
-
-
-//CAMBIOS PENDIENTES
-
-/* import { useState, useEffect } from "react";
-import axios from "axios";
-import AddProject from "./../components/AddProject";
-import ProjectCard from "./../components/ProjectCard";
-
-const API_URL = process.env.REACT_APP_API_URL;
-
-
-function ProjectListPage() {
-  const [projects, setProjects] = useState([]);
-  const[loading,setLoading] = useState(true)
-
-  const getAllProjects = () => {
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');
-
-    // Send the token through the request "Authorization" Headers
-    axios
-      .get(
-      `${API_URL}/projects`,
-      { headers: { Authorization: `Bearer ${storedToken}` } }
-    )
-      .then((response) => {
-        setProjects(response.data)
-        setLoading(false)
-      })
-      .catch((error) => console.log(error));
-  };
-
-  // We set this effect will run only once, after the initial render
-  // by setting the empty dependency array - []
-  useEffect(() => {
-    getAllProjects();
-  }, [] );
-
-  
-  return (
-    <div className="ProjectListPage">
-      
-      <AddProject refreshProjects={getAllProjects} />
-
-      {loading && <div>Loading...</div>}
-      { !loading && projects?.map((project) => <ProjectCard key={project._id} {...project} />  )} 
-       
-    </div>
-  );
-}
-
-export default ProjectListPage; */
-

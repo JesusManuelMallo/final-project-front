@@ -62,7 +62,7 @@ nav li {
 
 .EditProjectPage,
 .AddProject,
-.AddTask,
+.AddSong,
 .SignupPage,
 .LoginPage {
   background: #f9eec3;
@@ -90,7 +90,7 @@ nav li {
 }
 
 .EditProjectPage form,
-.AddTask form,
+.AddSong form,
 .AddProject form,
 .SignupPage form,
 .LoginPage form {
@@ -99,7 +99,7 @@ nav li {
   align-items: center;
 }
 
-.AddTask button,
+.AddSong button,
 .AddProject button {
   display: block;
 }

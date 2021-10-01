@@ -1,64 +1,110 @@
-import axios from 'axios'
-import React, {useState, useEffect, } from 'react'
-import { AuthContext } from "./../context/auth.context"; 
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { AuthContext } from "./../context/auth.context";
+import { useContext } from "react";
 const API_URL = process.env.REACT_APP_API_URL;
 
-
 function HomePage() {
-
-/* 
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
+  /* 
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   const handleLoggedIn =(e)=> setIsLoggedIn()
 
  */
-  const [songs, setSongs] = useState([])
+  const [songs, setSongs] = useState([]);
 
   useEffect(() => {
     // Get the token from the localStorage
-    const storedToken = localStorage.getItem('authToken');
-    
-    // Send the token through the request "Authorization" Headers 
-    axios
-      .get(
-        `${API_URL}/prueba`
-      
-      )
-      .then((response) => {
-        console.log("DATOS API" , response)
-        setSongs(response.data) 
-     
+    const storedToken = localStorage.getItem("authToken");
 
+    // Send the token through the request "Authorization" Headers
+    axios
+      .get(`${API_URL}/prueba`)
+      .then((response) => {
+        console.log("DATOS API", response);
+        setSongs(response.data);
       })
       .catch((error) => console.log(error));
-    
   }, []);
 
+  const handleFavorite = (song) => {
+    console.log("user", user);
+    console.log("anadido a favorito", song);
+    const storedToken = localStorage.getItem("authToken");
 
+    const config = {
+      headers: { Authorization: `Bearer ${storedToken}` },
+    };
 
+    const body = { user, song };
+
+    axios
+      .post(`${API_URL}/favourite`, body, config)
+      .then(console.log)
+      .catch(console.log);
+
+    console.log("anadido a favorito", song);
+  };
+
+  const handleRemoveFavourite = (song) => {
+    const storedToken = localStorage.getItem("authToken");
+
+    const config = {
+      headers: { Authorization: `Bearer ${storedToken}` },
+    };
+
+    const body = { user, song };
+
+    axios
+      .post(`${API_URL}/removefavourite`, body, config)
+      .then(console.log)
+      .catch(console.log);
+
+    console.log("anadido a favorito", song);
+  };
 
   return (
     <div>
       <h1>The Beautiful Experience</h1>
-      <h2>Welcome 2 the dawn, U just accessed to <b><i> The Beautiful Experience</i> </b></h2>
-      <p> <b><i> The Beautiful Experience</i> </b> will progress over time</p>
-      <p>By now, you´ll have acces to a list from 20 songs to be stored on your profile</p>
-    
-      {songs.map((i) => (
-        <div key={i.text} className="card">
-          <img src={i.img} alt="TBEsong" />
-          <h3>{i.name}</h3>
-          
+      <h2>
+        Welcome 2 the dawn, U just accessed to{" "}
+        <b>
+          <i> The Beautiful Experience</i>{" "}
+        </b>
+      </h2>
+      <p>
+        {" "}
+        <b>
+          <i> The Beautiful Experience</i>{" "}
+        </b>{" "}
+        will progress over time
+      </p>
+      <p>
+        By now, you´ll have acces to a list from 20 songs to be stored on your
+        profile
+      </p>
+
+      {songs.map((song) => (
+        <div key={song.text} className="card">
+          <img src={song.img} alt="TBEsong" />
+          <h3>{song.name}</h3>
+          {isLoggedIn && (
+            <>
+              <button onClick={() => handleFavorite(song)}>
+                ADD TO FAVOURITES
+              </button>
+              <button onClick={() => handleRemoveFavourite(song)}>
+                DELETE
+              </button>
+            </>
+          )}
         </div>
       ))}
-    
-    
-  
     </div>
   );
 }
 
 export default HomePage;
-
 
 //https://openwhyd.org/u/61561e4608ced3543d922165?format=json
