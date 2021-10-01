@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, {useState, useEffect, } from 'react'
 import { AuthContext } from "./../context/auth.context"; 
-
+const API_URL = process.env.REACT_APP_API_URL;
 
 
 function HomePage() {
@@ -21,11 +21,11 @@ function HomePage() {
     // Send the token through the request "Authorization" Headers 
     axios
       .get(
-        `https://openwhyd.org/u/61561e4608ced3543d922165?format=json`
+        `${API_URL}/prueba`
       
       )
       .then((response) => {
-        console.log("DATOS API" , response.data)
+        console.log("DATOS API" , response)
         setSongs(response.data) 
      
 
@@ -46,7 +46,7 @@ function HomePage() {
     
       {songs.map((i) => (
         <div key={i.text} className="card">
-          <img src={i.name} alt="TBEsong" />
+          <img src={i.img} alt="TBEsong" />
           <h3>{i.name}</h3>
           
         </div>
