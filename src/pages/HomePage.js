@@ -21,12 +21,14 @@ function HomePage() {
     // Send the token through the request "Authorization" Headers 
     axios
       .get(
-        `https://openwhyd.org/u/61561e4608ced3543d922165?format=json`,
+        `https://openwhyd.org/u/61561e4608ced3543d922165?format=json`
       
       )
       .then((response) => {
+        console.log("DATOS API" , response.data)
         setSongs(response.data) 
      
+
       })
       .catch((error) => console.log(error));
     
