@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <nav>
       <Link to="/">
-        <button>T.B.E.</button>
+        <button>HOME</button>
       </Link>
 -
       {isLoggedIn

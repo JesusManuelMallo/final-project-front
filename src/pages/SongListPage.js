@@ -36,7 +36,7 @@ function SongListPage() {
 
   return (
     <div className="SongsListPage">
-      <h1>SOY LA PAGINA Q WARDA CACNNNCIONES</h1>
+      <h1>Your favourite songs</h1>
       <AddSong refreshSongs={allFavourites} />
 
       {loading ? <div>Loading...</div> : null}

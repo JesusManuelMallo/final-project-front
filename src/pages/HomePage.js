@@ -66,23 +66,22 @@ function HomePage() {
 
   return (
     <div>
-      <h1>The Beautiful Experience</h1>
+      <h1>Jesus Mallo Music</h1>
       <h2>
-        Welcome 2 the dawn, U just accessed to{" "}
+        Jesus Mallo best songs{" "}
         <b>
-          <i> The Beautiful Experience</i>{" "}
+          <i> Select your favourite songs and save them on your profile</i>{" "}
         </b>
       </h2>
       <p>
         {" "}
         <b>
-          <i> The Beautiful Experience</i>{" "}
+          <i> </i>{" "}
         </b>{" "}
-        will progress over time
+        
       </p>
       <p>
-        By now, you´ll have acces to a list from 20 songs to be stored on your
-        profile
+        
       </p>
 
       {songs.map((song) => (
