@@ -1,0 +1,4 @@
+ button add favorites style:
+ 
+ background-color: #172358;
+  color: coral;

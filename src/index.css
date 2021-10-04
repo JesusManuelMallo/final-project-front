@@ -1,11 +1,23 @@
 body {
   margin: 0;
-  background-image: url("./bakcground2.jpg");
+  background-color: black;
+  background-image: url("./background4.jpg");
   background-repeat: repeat-y;
   background-position: center;
+  background-attachment: fixed;
+  color: #829cea;
+  text-shadow: 5px 5px 10px blue;
 }
 
-a {
+h2 {
+  color: navajowhite;
+}
+
+p {
+  color: coral;
+}
+
+h1 a {
   list-style: none;
   color: black;
 }
@@ -16,6 +28,9 @@ select {
   min-width: 50px;
   margin: 5px;
   font-size: 18px;
+  border-radius: 33%;
+  background-color: #172358;
+  color: coral;
 }
 
 label {
@@ -32,10 +47,10 @@ textarea {
 }
 
 nav {
-  background: #515f7d;
-  color: white;
+  background: #000000;
+  color: rgb(95, 194, 233);
   padding: 0px 20px;
-  box-shadow: 0px 1px 2px gray;
+  box-shadow: 0px 1px 21px rgb(119, 198, 212);
   width: 100%;
   margin-bottom: 15px;
   padding: 5px;
@@ -49,13 +64,13 @@ nav li {
 }
 
 .card {
-  width: 400px;
+  max-width: 720px;
   padding: 10px;
-  box-shadow: 0px 2px 3px grey;
+  box-shadow: 0px 10px 10px grey;
   margin: 0 auto;
   margin-bottom: 20px;
-  background: #94a7c8;
-  border-radius: 4px;
+  background: #000000;
+  border-radius: 33%;
 }
 
 .ProjectCard h3::after {
@@ -85,11 +100,11 @@ nav li {
 
 .SignupPage,
 .LoginPage {
-  background-color: #608dd5;
+  background-color: #0c1b33;
 }
 
 .LoginPage {
-  background-color: #94a7c8;
+  background-color: #0c1b33;
 }
 
 .EditProjectPage form,

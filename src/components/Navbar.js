@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";                       // <== IMPORT 
 import { AuthContext } from "./../context/auth.context";  // <== IMPORT
+import { Button} from 'react-bootstrap-buttons'
+import 'react-bootstrap-buttons/dist/react-bootstrap-buttons.css';
+
 
 function Navbar() {
   // Subscribe to the AuthContext to gain access to
@@ -10,21 +13,22 @@ function Navbar() {
   return (
     <nav>
       <Link to="/">
-        <button>HOME</button>
+        {/* <button>HOME</button> */}
+        <img src="./../jesus-mallo-logo.png" alt=""/>
       </Link>
--
+
       {isLoggedIn
         ? (<>
             <Link to="/songs">
-              <button>Songs</button>
+              <Button btnStyle= "dark"> Songs </Button>
             </Link>
-            <button onClick={logOutUser}>Logout</button>
+            <Button btnStyle="dark" onClick={logOutUser}>Logout</Button>
             <span>{user.name}</span>
           </>)
         : 
         (<>
-          <Link to="/signup"> <button>Signup</button> </Link>
-          <Link to="/login"> <button>Login</button> </Link>
+          <Link to="/signup"> <Button btnStyle= "dark">Signup</Button> </Link>
+          <Link to="/login"> <Button btnStyle= "dark">Login</Button> </Link>
         </>)
       }
     </nav>

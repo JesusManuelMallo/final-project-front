@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Button} from 'react-bootstrap-buttons';
+import 'react-bootstrap-buttons/dist/react-bootstrap-buttons.css';
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -48,13 +50,13 @@ function SignupPage(props) {
         <label>Name:</label>
         <input type="text" name="name" value={name} onChange={handleName} />
 
-        <button type="submit">Sign Up</button>
+        <Button btnStyle="primary"  type="submit">Sign Up</Button>
       </form>
 
       { errorMessage && <p className="error-message">{errorMessage}</p> }
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <p>Already have account?
+      <Link to={"/login"}> Login</Link></p>
     </div>
   )
 }
