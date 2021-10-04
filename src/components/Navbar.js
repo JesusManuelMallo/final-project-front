@@ -27,8 +27,10 @@ function Navbar() {
           </>)
         : 
         (<>
+          <Link to="/about"> <Button btnStyle= "dark">About</Button> </Link>
           <Link to="/signup"> <Button btnStyle= "dark">Signup</Button> </Link>
           <Link to="/login"> <Button btnStyle= "dark">Login</Button> </Link>
+          
         </>)
       }
     </nav>

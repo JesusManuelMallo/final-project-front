@@ -67,10 +67,10 @@ function HomePage() {
 
   return (
     <div>
-    
+
       <h1>Jesus Mallo Music</h1>
       <h2>
-      Select your favourite songs from: <p><h3><i>Jesus Mallo</i> album´s TIME and SPACE</h3> </p>
+      Select your favourite songs from: <p><h3><i>Jesus Mallo</i> album´s <b>TIME and SPACE</b> <i>and exculive content</i></h3> </p>
       <p><h2>and save them on your profile</h2></p>
         
       </h2>
