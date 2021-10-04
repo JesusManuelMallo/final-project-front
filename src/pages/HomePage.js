@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { AuthContext } from "./../context/auth.context";
 import { useContext } from "react";
+import ReactPlayer from "react-player";
 const API_URL = process.env.REACT_APP_API_URL;
 
 function HomePage() {
@@ -68,34 +69,24 @@ function HomePage() {
     <div>
       <h1>Jesus Mallo Music</h1>
       <h2>
-        Jesus Mallo best songs{" "}
-        <b>
-          <i> Select your favourite songs and save them on your profile</i>{" "}
-        </b>
+      Select your favourite songs from <p>Jesus Mallo album´s TIME and SPACE </p>
+      <p>and save them on your profile</p>
+        
       </h2>
-      <p>
-        {" "}
-        <b>
-          <i> </i>{" "}
-        </b>{" "}
-        
-      </p>
-      <p>
-        
-      </p>
-
+  
       {songs.map((song) => (
         <div key={song.text} className="card">
-          <img src={song.img} alt="TBEsong" />
+         {/*  <img src={song.img} alt="TBEsong" /> */}
           <h3>{song.name}</h3>
+          <ReactPlayer url={song.text} />
           {isLoggedIn && (
             <>
               <button onClick={() => handleFavorite(song)}>
                 ADD TO FAVOURITES
               </button>
-              <button onClick={() => handleRemoveFavourite(song)}>
+              {/* <button onClick={() => handleRemoveFavourite(song)}>
                 DELETE
-              </button>
+              </button> */}
             </>
           )}
         </div>

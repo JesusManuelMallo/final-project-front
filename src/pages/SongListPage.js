@@ -40,7 +40,8 @@ function SongListPage() {
       <AddSong refreshSongs={allFavourites} />
 
       {loading ? <div>Loading...</div> : null}
-      {!loading && songs2?.map((song) => <SongCard key={song._id} {...song} />)}
+      {!loading && songs2?.map((song) => <SongCard key={song._id} {...song} songs2={songs2} setsongs2={setSongs2}/>)}
+      
     </div>
   );
 }

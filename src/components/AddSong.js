@@ -43,7 +43,8 @@ function AddSong(props) {
   };
 
   return (
-    <div className="AddSong">
+    null
+   /*  <div className="AddSong">
       <h3>ADD NEW SONG</h3>
 
       <form onSubmit={handleSubmit}>
@@ -66,7 +67,7 @@ function AddSong(props) {
         <button type="submit">Add Task</button>
         {isLoading && <Spinner animation="grow" size="sm" />}
       </form>
-    </div>
+    </div> */
   );
 }
 
