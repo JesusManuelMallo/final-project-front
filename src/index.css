@@ -71,6 +71,12 @@ nav li {
   margin-bottom: 20px;
   background: #000000;
   border-radius: 33%;
+  display: flex;
+  text-align: center;
+}
+
+.card > div {
+  width: 100px;
 }
 
 .ProjectCard h3::after {
@@ -124,4 +130,18 @@ nav li {
 
 .TaskCard {
   background-color: #dfeef9;
+}
+
+.react-player {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+}
+
+.Reactplayer {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
 }

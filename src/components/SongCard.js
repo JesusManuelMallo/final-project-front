@@ -5,6 +5,13 @@ import {useContext} from "react";
 import { mapToStyles } from "@popperjs/core/lib/modifiers/computeStyles";
 import { filter } from "dom-helpers";
 import ReactPlayer from "react-player";
+import "./../index.css";
+
+/* const divStyle = {
+  align: 'center',
+  width: '10px'
+  
+}; */
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -39,8 +46,8 @@ function SongCard (props ) {
   <>
   {/*   {console.log("SOONGS!!!", songs, setsongs)} */}
 
-    <div className="SongCard card">
-    <ReactPlayer url={props.video} />
+    <div className="SongCard card" >
+    <ReactPlayer  url={props.video} />
 
   {/*   <img src={props.image} alt="SongImage" /> */}
       
@@ -49,7 +56,7 @@ function SongCard (props ) {
       
       <p style={{ maxWidth: "400px" }}>{props.description} </p>
       <button onClick={() => handleRemoveFavourite()}>
-                DELETE
+                DELETE FROM FAVOURITES
               </button>
       
     </div>

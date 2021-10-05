@@ -10,6 +10,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import PrivateRoute from "./components/PrivateRoute";    // <== IMPORT
 import AnonRoute from "./components/AnonRoute";        // <== IMPORT
+import About from "./components/About";
 
 ////
 function App() {
@@ -19,6 +20,7 @@ function App() {
 
       <Switch>      
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/about" component={About} />
         
         {/* 👇 UPDATE THE EXISTING ROUTES 👇  */}
         <PrivateRoute exact path="/songs" component={SongListPage} />

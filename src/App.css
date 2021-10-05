@@ -37,3 +37,13 @@
     transform: rotate(360deg);
   }
 }
+/* .center {
+  text-align: center;
+} */
+
+.react-player video {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+}
