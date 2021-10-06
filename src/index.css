@@ -10,10 +10,14 @@ body {
 }
 
 h2 {
+  /* display: flex;
+  justify-content: center; */
   color: navajowhite;
 }
 
 p {
+  /* display: flex;
+  justify-content: center; */
   color: coral;
 }
 
@@ -57,9 +61,13 @@ nav {
   position: fixed;
   z-index: 1;
 }
-.stars {
+/* .welcome {
+  display: flex;
+  justify-content: center;
+  max-width: 450px;
   background-image: url("./big-jesus-logo.png");
-}
+  background-repeat: no-repeat;
+ } */
 
 nav li {
   list-style: none;

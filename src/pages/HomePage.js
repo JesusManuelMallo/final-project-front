@@ -68,24 +68,24 @@ function HomePage() {
   };
 
   return (
-    <div>
-    <div className="stars">
-    <img src="./../jesus-mallo-logo.png" alt=""/>
-    <img src="./../jesus-mallo-logo.png" alt=""/>
-    <img src="./../jesus-mallo-logo.png" alt=""/>
+    <div className="">
+    <div className="welcome">
+    {/* <img src="./../jesus-mallo-logo.png" alt=""/>
+    <img src="./../jesus-mallo-logo.png" alt=""/> */}
+    {/* <img src="./../jesus-mallo-logo.png" alt=""/> */}
     
 <img src={jesusLogoHome} alt="PRUEBA"/>
-<img src="./../jesus-mallo-logo.png" alt=""/>
-<img src="./../jesus-mallo-logo.png" alt=""/>
-<img src="./../jesus-mallo-logo.png" alt=""/>
-</div>
+{/* <img src="./../jesus-mallo-logo.png" alt=""/> */}
+{/* <img src="./../jesus-mallo-logo.png" alt=""/>
+<img src="./../jesus-mallo-logo.png" alt=""/> */}
+
       <h1>Jesus Mallo Music</h1>
       <h2>
       Select your favourite songs from: <p><h3><i>JESUS MALLO's</i> albums: <b>TIME and SPACE</b> <i> and exclusive content</i></h3> </p>
       <p><h2>and save them on your profile</h2></p>
         
       </h2>
-  
+      </div>
       {songs.map((song) => (
         <div key={song.text} className="card">
          {/*  <img src={song.img} alt="TBEsong" /> */}
