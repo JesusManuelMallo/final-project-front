@@ -30,7 +30,7 @@ function Navbar() {
               <Button btnStyle= "dark"> Favourites </Button>
             </Link>
             <Link to="/exclusive">
-              <Button btnStyle= "dark"> Exclusive </Button>
+              <Button btnStyle= "ligth"> Exclusive </Button>
             </Link>
             
             <Button btnStyle="primary" onClick={logOutUser}> Logout </Button>
