@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { AuthContext } from "./../context/auth.context";
 import { useContext } from "react";
 import ReactPlayer from "react-player";
-import jesusLogoHome from "./../big-jesus-logo.png"
+/* import jesusLogoHome from "./../big-jesus-logo.png" */
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -68,23 +68,27 @@ function HomePage() {
   };
 
   return (
+    
     <div className="">
     <div className="welcome">
     {/* <img src="./../jesus-mallo-logo.png" alt=""/>
     <img src="./../jesus-mallo-logo.png" alt=""/> */}
     {/* <img src="./../jesus-mallo-logo.png" alt=""/> */}
     
-<img src={jesusLogoHome} alt="PRUEBA"/>
+
 {/* <img src="./../jesus-mallo-logo.png" alt=""/> */}
 {/* <img src="./../jesus-mallo-logo.png" alt=""/>
 <img src="./../jesus-mallo-logo.png" alt=""/> */}
 
-      <h1>Jesus Mallo Music</h1>
+      <h1>JESUS MALLO Music</h1>
+      {/* <img src={jesusLogoHome} alt="JesusMalloHomeLogo" className="logoShadhow"/> */}
+      {!isLoggedIn? 
       <h2>
-      Select your favourite songs from: <p><h3><i>JESUS MALLO's</i> albums: <b>TIME and SPACE</b> <i> and exclusive content</i></h3> </p>
+      Select your favourite songs from: <p><h3><i>JESUS MALLO's</i> albums: <b>"TIME" and "SPACE"</b> </h3> </p>
       <p><h2>and save them on your profile</h2></p>
-        
-      </h2>
+      <p><h2>SignUp/Login to acces exclusive content</h2></p>
+      </h2>:
+      null}
       </div>
       {songs.map((song) => (
         <div key={song.text} className="card">

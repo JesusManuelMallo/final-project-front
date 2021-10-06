@@ -19,7 +19,7 @@ function Navbar() {
 
       {isLoggedIn
         ? (<>
-          <Link to="/about"> <Button btnStyle= "dark">About</Button> </Link>
+          <Link to="/about"> <Button btnStyle= "dark"> Bio </Button> </Link>
             <a href="https://open.spotify.com/artist/7ndnECNrpbJnrqEHRz15UG">
               <Button btnStyle= "dark"> Spotify </Button>
             </a>
@@ -29,8 +29,11 @@ function Navbar() {
             <Link to="/songs">
               <Button btnStyle= "dark"> Favourites </Button>
             </Link>
+            <Link to="/exclusive">
+              <Button btnStyle= "dark"> Exclusive </Button>
+            </Link>
             
-            <Button btnStyle="dark" onClick={logOutUser}>Logout</Button>
+            <Button btnStyle="primary" onClick={logOutUser}> Logout </Button>
             <span>{user.name}</span>
           </>)
         : 
@@ -38,7 +41,7 @@ function Navbar() {
         
 
         (<>
-          <Link to="/about"> <Button btnStyle= "dark">About</Button> </Link>
+          <Link to="/about"> <Button btnStyle= "dark">Bio</Button> </Link>
           <a href="https://open.spotify.com/artist/7ndnECNrpbJnrqEHRz15UG">
               <Button btnStyle= "dark"> Spotify </Button>
             </a>
@@ -48,8 +51,8 @@ function Navbar() {
             {/* <Link to="/songs">
               <Button btnStyle= "dark"> Songs </Button>
             </Link> */}
-          <Link to="/signup"> <Button btnStyle= "primary">Signup</Button> </Link>
-          <Link to="/login"> <Button btnStyle= "primary">Login</Button> </Link>
+          <Link to="/signup"> <Button btnStyle= "primary"> Signup </Button> </Link>
+          <Link to="/login"> <Button btnStyle= "primary"> Login </Button> </Link>
           
         </>)
       }

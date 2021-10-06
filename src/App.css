@@ -25,6 +25,10 @@
   color: white;
 }
 
+.appBody {
+  padding-top: 145px;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -41,9 +45,9 @@
   text-align: center;
 } */
 
-.react-player video {
+/* .react-player video {
   position: relative;
   left: 0;
   top: 0;
   transform: none;
-}
+} */

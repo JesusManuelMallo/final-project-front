@@ -47,11 +47,12 @@ function SongCard (props ) {
   {/*   {console.log("SOONGS!!!", songs, setsongs)} */}
 
     <div className="SongCard card" >
-    <ReactPlayer  url={props.video} />
+    <h3>{props.title}</h3>
+    <ReactPlayer  url={props.video} className="centerVideo" />
 
   {/*   <img src={props.image} alt="SongImage" /> */}
       
-        <h3>{props.title}</h3>
+        
       
       
       <p style={{ maxWidth: "400px" }}>{props.description} </p>

@@ -6,19 +6,46 @@ body {
   background-position: center;
   background-attachment: fixed;
   color: #829cea;
-  text-shadow: 5px 5px 10px blue;
+  text-shadow: 0px -3px 1px #0c1c65;
+}
+
+.bioData {
+  /* display: flex;
+  justify-content: space-around; */
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.bioDataSmall {
+  text-align: left;
+  padding-left: 20px;
+}
+
+h1 {
+  height: 200px;
+  font-size: calc(3.375rem + 1.5vw);
+  animation: mymove 2s infinite;
+  background-image: url(./big-jesus-logo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* text-shadow: 0px -3px 1px #080349; */
+}
+@keyframes mymove {
+  33% {
+    text-shadow: 10px 20px 30px blue;
+  }
 }
 
 h2 {
   /* display: flex;
   justify-content: center; */
-  color: navajowhite;
+  color: coral;
 }
 
 p {
   /* display: flex;
   justify-content: center; */
-  color: coral;
+  color: navajowhite;
 }
 
 h1 a {
@@ -33,6 +60,7 @@ select {
   margin: 5px;
   font-size: 18px;
   border-radius: 33%;
+  border-color: blueviolet;
   background-color: #172358;
   color: coral;
 }
@@ -53,7 +81,6 @@ textarea {
 nav {
   background: #000000;
   color: rgb(95, 194, 233);
-  padding: 0px 20px;
   box-shadow: 0px 1px 21px rgb(119, 198, 212);
   width: 100%;
   margin-bottom: 15px;
@@ -66,8 +93,7 @@ nav {
   justify-content: center;
   max-width: 450px;
   background-image: url("./big-jesus-logo.png");
-  background-repeat: no-repeat;
- } */
+  background-repeat: no-repeat; */
 
 nav li {
   list-style: none;
@@ -79,11 +105,11 @@ nav li {
 .card {
   max-width: 720px;
   padding: 10px;
-  box-shadow: 0px 10px 10px grey;
+  box-shadow: 0px 0px 50px #6262e3;
   margin: 0 auto;
   margin-bottom: 20px;
   background: #000000;
-  border-radius: 33%;
+  border-radius: 25%;
   display: flex;
   text-align: center;
 }
@@ -115,6 +141,10 @@ nav li {
 
 .EditProjectPage {
   background-color: rgb(239, 196, 88);
+}
+
+.LoginSignupText {
+  color: coral;
 }
 
 .SignupPage,
