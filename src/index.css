@@ -54,6 +54,11 @@ nav {
   width: 100%;
   margin-bottom: 15px;
   padding: 5px;
+  position: fixed;
+  z-index: 1;
+}
+.stars {
+  background-image: url("./big-jesus-logo.png");
 }
 
 nav li {
@@ -139,9 +144,31 @@ nav li {
   transform: none;
 }
 
-.Reactplayer {
+.Reactplayer video {
   position: relative;
   left: 0;
   top: 0;
   transform: none;
+  display: flex;
+  justify-content: center;
 }
+
+.centerVideo {
+  max-width: 70vw;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/* .AddSong {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.SongCard {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+} */

@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { AuthContext } from "./../context/auth.context";
 import { useContext } from "react";
 import ReactPlayer from "react-player";
+import jesusLogoHome from "./../big-jesus-logo.png"
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 function HomePage() {
@@ -67,7 +69,16 @@ function HomePage() {
 
   return (
     <div>
-
+    <div className="stars">
+    <img src="./../jesus-mallo-logo.png" alt=""/>
+    <img src="./../jesus-mallo-logo.png" alt=""/>
+    <img src="./../jesus-mallo-logo.png" alt=""/>
+    
+<img src={jesusLogoHome} alt="PRUEBA"/>
+<img src="./../jesus-mallo-logo.png" alt=""/>
+<img src="./../jesus-mallo-logo.png" alt=""/>
+<img src="./../jesus-mallo-logo.png" alt=""/>
+</div>
       <h1>Jesus Mallo Music</h1>
       <h2>
       Select your favourite songs from: <p><h3><i>JESUS MALLO's</i> albums: <b>TIME and SPACE</b> <i> and exclusive content</i></h3> </p>
@@ -79,7 +90,7 @@ function HomePage() {
         <div key={song.text} className="card">
          {/*  <img src={song.img} alt="TBEsong" /> */}
           <h3>{song.name}</h3>
-          <ReactPlayer url={song.text} />
+          <ReactPlayer url={song.text} class="centerVideo" />
           {isLoggedIn && (
             <>
               <button onClick={() => handleFavorite(song)}>
