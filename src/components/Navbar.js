@@ -19,6 +19,7 @@ function Navbar() {
 
       {isLoggedIn
         ? (<>
+          <a href="mailto:jesus.mallo.paya@gmail.com">Contact</a>
           <Link to="/about"> <Button btnStyle= "dark"> Bio </Button> </Link>
             <a href="https://open.spotify.com/artist/7ndnECNrpbJnrqEHRz15UG">
               <Button btnStyle= "dark"> Spotify </Button>
@@ -41,6 +42,7 @@ function Navbar() {
         
 
         (<>
+          <a href="mailto:jesus.mallo.paya@gmail.com">Contact</a>
           <Link to="/about"> <Button btnStyle= "dark">Bio</Button> </Link>
           <a href="https://open.spotify.com/artist/7ndnECNrpbJnrqEHRz15UG">
               <Button btnStyle= "dark"> Spotify </Button>
@@ -48,9 +50,7 @@ function Navbar() {
             <a href="https://music.apple.com/es/artist/jesus-mallo/1548480437">
               <Button btnStyle= "dark"> Apple Music </Button>
             </a>
-            {/* <Link to="/songs">
-              <Button btnStyle= "dark"> Songs </Button>
-            </Link> */}
+            
           <Link to="/signup"> <Button btnStyle= "primary"> Signup </Button> </Link>
           <Link to="/login"> <Button btnStyle= "primary"> Login </Button> </Link>
           
