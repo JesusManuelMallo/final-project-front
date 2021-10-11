@@ -20,6 +20,7 @@ function Navbar() {
       {isLoggedIn
         ? (<>
           <a href="mailto:jesus.mallo.paya@gmail.com">Contact</a>
+          <h3>||</h3>
           <a href="https://www.paypal.com/ROBOTJESUS" >Donations</a>
           <Link to="/about"> <Button btnStyle= "dark"> Bio </Button> </Link>
             <a href="https://open.spotify.com/artist/7ndnECNrpbJnrqEHRz15UG">
