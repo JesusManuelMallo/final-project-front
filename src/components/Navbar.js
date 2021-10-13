@@ -49,7 +49,9 @@ function Navbar() {
         
 
         (<>
-         
+          <a href="https://www.redbubble.com/es/people/EleosAidos/explore?page=1&sortOrder=recent">
+              <Button btnStyle= "dark"> Merch </Button>
+            </a>
 
           <Link to="/about"> <Button btnStyle= "dark">Bio</Button> </Link>
           <a href="https://open.spotify.com/artist/7ndnECNrpbJnrqEHRz15UG">
