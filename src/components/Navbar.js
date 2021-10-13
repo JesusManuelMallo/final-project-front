@@ -24,9 +24,13 @@ function Navbar() {
         ? (<>
           
           <Link to="/about"> <Button btnStyle= "dark"> Bio </Button> </Link>
+          <a href="https://www.redbubble.com/es/people/EleosAidos/shop">
+              <Button btnStyle= "dark"> Merch </Button>
+            </a>
             <a href="https://open.spotify.com/artist/7ndnECNrpbJnrqEHRz15UG">
               <Button btnStyle= "dark"> Spotify </Button>
             </a>
+            
             <a href="https://music.apple.com/es/artist/jesus-mallo/1548480437">
               <Button btnStyle= "dark"> Apple Music </Button>
             </a>
