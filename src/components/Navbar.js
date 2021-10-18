@@ -16,7 +16,7 @@ function Navbar() {
         {/* <button>HOME</button> */}
         <img src="./../jesus-mallo-logo.png" alt=""/>
       </Link>
-      <a href="mailto:jesus.mallo.paya@gmail.com">Contact</a>
+      <a href="mailto:jesusmallo@jesusmallo.eu">Contact</a>
          ||
           <a href="https://www.paypal.com/ROBOTJESUS" >Donations</a>
 
