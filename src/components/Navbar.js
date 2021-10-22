@@ -49,7 +49,7 @@ function Navbar() {
         
 
         (<>
-          <a href="https://www.redbubble.com/es/people/EleosAidos/explore?page=1&sortOrder=recent">
+          <a href="https://www.redbubble.com/es/shop/ap/35454460">
               <Button btnStyle= "dark"> Merch </Button>
             </a>
 
